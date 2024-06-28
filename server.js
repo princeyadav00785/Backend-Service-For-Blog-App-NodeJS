@@ -9,6 +9,7 @@ const passwordResetRoutes= require('./Routes/passwordReset');
 const commentRoutes=require('./Routes/commentRoutes');
 const notificationsRoutes =require('./Routes/notificationsRoutes');
 const likeRoutes = require('./Routes/likesRoutes');
+const profileRoutes = require('./Routes/profileRoutes');
 
 
 
@@ -22,6 +23,7 @@ app.use('/api/password',passwordResetRoutes);
 app.use('/api/comments',commentRoutes);
 app.use('/api/notifications', notificationsRoutes);
 app.use('/api', likeRoutes);
+app.use('/api', profileRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
