@@ -29,6 +29,16 @@ const UserSchema = new mongoose.Schema(
     resetPasswordExpires: {
       type: Date,
     },
+    // Adding new features For User Profile .
+    bio: {
+      type: String,
+    },
+    avatar: {
+      type: String,
+    },
+    location: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
