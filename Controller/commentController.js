@@ -1,5 +1,6 @@
 const Comment= require('../Model/commentmodel');
 const Post = require('../Model/blogmodel');
+const {createNotification}= require('../utils/notificationUtil')
 
 exports.addComment= async(req,res)=>{
   
@@ -25,7 +26,11 @@ exports.addComment= async(req,res)=>{
             userid: req.user.id,
         })
         await comment.save();
+         // Notify post author about the new comment
+         await createNotification(post.author, 'comment', `New comment on your post: ${content}`);
+
         return res.status(201).send("Comment added sucessfully !!")
+        // res.status(201).json(comment);
 
     } catch(err){
         console.log('Server Error !!',err);
