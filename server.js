@@ -6,6 +6,7 @@ const userRoutes = require('./Routes/userRouter');
 const postRoutes = require('./Routes/postRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
 const passwordResetRoutes= require('./Routes/passwordReset');
+const commentRoutes=require('./Routes/commentRoutes');
 
 
 connectDB();
@@ -15,8 +16,11 @@ app.use('/api/posts', postRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/password',passwordResetRoutes);
+app.use('/api/comments',commentRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
