@@ -151,9 +151,6 @@ You can use ThunderClient or Postman to test the API endpoints. Here are some ex
     }
     ```
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
