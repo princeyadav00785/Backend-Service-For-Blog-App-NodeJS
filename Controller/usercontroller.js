@@ -73,7 +73,7 @@ exports.loginUser = async (req, res) => {
     const token = res.token;
 
     // Store the token in localStorage or a cookie
-    // localStorage.setItem("token", token);
+    // localStorage.setItem("token", token);  this is done on client side..
   } catch (err) {
     console.log("Error occured !!", err);
     res.status(500).send("Server Error!!");
@@ -81,3 +81,16 @@ exports.loginUser = async (req, res) => {
 };
 
 
+exports.logoutUser = (req, res) => {
+  try {
+    // Assuming you are using JWT tokens, you can invalidate the token on the client side by simply removing it from local storage or cookies.
+    // If you are storing tokens on the server side, you would need to remove it from the store.
+     
+    // localStorage.removeItem('token');   this is done on client side . when calling sucessfully logout route.
+    // bcz localStorage is a feature available only in the browser environment. In a server-side Node.js environment, there is no localStorage.
+    res.status(200).json({ msg: 'User logged out successfully' });
+  } catch (err) {
+    console.error('Error logging out user: ', err);
+    res.status(500).send('Server Error');
+  }
+};
